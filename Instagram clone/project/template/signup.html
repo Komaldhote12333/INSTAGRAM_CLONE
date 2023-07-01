@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instagram Registration Page</title>
+	 <link rel="stylesheet" href="{% static 'style/signup.css' %}">
+
+</head>
+<body>
+	<div class="container">
+		<form action="{% url 'registerdone' %}" method="post">
+        {% csrf_token %} 
+			<h1>Sign up for Instagram</h1>
+			<label for="fullname">Full Name</label>
+			<input type="text" id="fullname" name="first_name" required>
+			<label for="username">Username</label>
+			<input type="text" id="username" name="username" required>
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" required>
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+			<label for="confirm-password">Confirm Password</label>
+			<input type="password" id="confirm-password" name="confirm-password" required>
+			<button type="submit">Sign Up</button>
+			<p>By signing up, you agree to our <a href="#">Terms</a>, <a href="#">Data Policy</a> and <a href="#">Cookies Policy</a>.</p>
+			<p>Already have an account? <a href="/home">Log in</a></p>
+		</form>
+	</div>
+</body>
+</html>

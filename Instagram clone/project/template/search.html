@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Instagram Clone - Search Results</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fafafa;
+        color: #262626;
+      }
+
+      h1 {
+        font-size: 28px;
+        font-weight: 600;
+        margin: 20px 0;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      p {
+        font-size: 14px;
+        margin: 5px 0;
+      }
+
+      button {
+        background-color: #0095f6;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0085f6;
+      }
+
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Search Results</h1>
+
+    <ul>    
+    {% for suser in searchusers %}
+      <li>
+        <img src={% if suser.profile_pic %}
+        
+        
+        "{{suser.profile_pic.url}}"
+        {% else %} 
+        
+        <img src=""
+        alt="User Profile Picture">
+
+        {% endif %}
+        <div>
+          <h2>{{suser.user.username}}</h2>
+          <p>{{suser.bio }}</p>
+        </div>
+        <form action="{% url 'followounfollow' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="userid" value="{{ suser.id }}">
+          <input type="hidden" name="serchq" value="{{ catid }}">
+          {% if request.user in suser.followers.all %}
+          <button type="submit">unfoolow</button>
+
+          {% else %}
+          <button type="submit" style="background-color:red">foolow</button>
+         {% endif %}
+      </form>
+      </li>
+
+
+      {% endfor %}
+
+
+
+
+
+     
+      <!-- Add more search results here as needed -->
+    </ul>
+  </body>
+</html>

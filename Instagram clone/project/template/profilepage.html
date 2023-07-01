@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instagram Clone Profile Page</title>
+     <link rel="stylesheet" href="{% static 'style/profile.css' %}">
+	<style>
+		/* Global Styles */
+		
+	</style>
+</head>
+<body>
+	<header class="header">
+		<h1>Instagram Clone</h1>
+		<button>Logout</button>
+	</header>
+
+	<form action="{% url 'search' %}" method="get">
+		<input type="text" name="q" placeholder="Search...">
+		<button type="submit">Search</button>
+	</form>
+	
+
+	<div class="upreprof">
+
+        <div class="profile-info">
+            <img src="{{currentuser.profile_pic.url}}" alt="hi">
+            <div class="user-info">
+                <h2>{{user.username}}</h2
+            <p>{{Bio}}</p>
+            <p></p>
+            
+        </div>
+    
+        <div>
+            followers {{followerscount}}
+    
+            following {{followcount}}
+
+            <div ><a href="/editprofile"> Edit profile</a></div>
+        </div>
+    </div>
+</div>
+
+<section class="posts">
+	<div class="post">
+		<img src="https://via.placeholder.com/500x500" alt="Post">
+	</div>
+	<div class="post">
+		<img src="https://via.placeholder.com/500x500" alt="Post">
+	</div>
+	<div class="post">
+		<img src="https://via.placeholder.com/500x500" alt="Post">
+	</div>
+	<div class="post">
+		<img src="https://via.placeholder.com/500x500" alt="Post">
+	</div>
+	<div class="post">
+		<img src="https://via.placeholder.com/500x500" alt="Post">
+	</div>
+	<div class="post">
+		<img src="https://via.placeholder.com/500x500" alt="Post">
+	</div>
+</section>
+
+</body>
+</html>

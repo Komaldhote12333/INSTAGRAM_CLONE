@@ -1,0 +1,27 @@
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Instagram Login and Registration Page</title>
+	 <link rel="stylesheet" href="{% static 'style/loginpage.css' %}">
+</head>
+<body>
+	<div class="container">
+		<img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" class="logo" alt="Instagram Logo">
+        <form action="{% url 'logindone' %}" method="post">
+            {% csrf_token %}
+
+			<input type="text" class="form-control" name= "username" placeholder="Username or Email">
+			<input type="password" name ="password" class="form-control" placeholder="Password">
+			<button type="submit" class="btn-primary">Log In</button>
+		</form>
+		<div class="or-separator">
+			<span class="or-text">OR</span>
+		</div>
+		<a href="/signup" class="signup-link">Sign up for Instagram</a>
+	</div>
+</body>
+</html>

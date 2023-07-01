@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.header button {
+    background-color: #3897f0;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Profile Info Styles */
+.profile-info {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    margin: 1rem 0;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 2rem;
+}
+
+.profile-info h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.profile-info p {
+    font-size: 1.2rem;
+    color: #999;
+    margin-bottom: 0.5rem;
+}
+
+/* Posts Styles */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.upreprof{
+    display: flex;
+    gap: 143rem;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+}
+
+button[type="submit"] {
+    background-color: #3897f0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .profile-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info img {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

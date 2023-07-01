@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Instagram Clone Edit Profile Form</title>
+	<style>
+		/* Global Styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #fafafa;
+		}
+
+		/* Form Styles */
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #fff;
+			padding: 2rem;
+			margin: 2rem auto;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+			max-width: 500px;
+		}
+
+		form h1 {
+			font-size: 2rem;
+			font-weight: bold;
+			color: #333;
+			margin-bottom: 1rem;
+		}
+
+		form label {
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: #333;
+			margin-bottom: 0.5rem;
+		}
+
+		form input[type="text"],
+		form input[type="email"],
+		form input[type="password"],
+		form input[type="file"],
+		form textarea {
+			width: 100%;
+			padding: 0.5rem;
+			border: none;
+			border-radius: 5px;
+			margin-bottom: 1rem;
+			font-size: 1.2rem;
+			color: #333;
+			background-color: #fafafa;
+			box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		}
+
+		form button {
+			background-color: #3897f0;
+			color: #fff;
+			font-size: 1.2rem;
+			font-weight: bold;
+			padding: 0.5rem 1rem;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 1rem;
+		}
+	</style>
+</head>
+<body>
+		<form method="post" action="{% url 'editeprofiledone' %}"  enctype="multipart/form-data">
+		{% csrf_token %}
+		<h1>Edit Profile</h1>
+
+		<label for="name">Name</label>
+		<input type="text" id="name" name="name" value="John Doe">
+
+		<label for="username">Username</label>
+		<input type="text" id="username" name="username" value="johndoe">
+
+		<label for="email">Email</label>
+		<input type="email" id="email" name="email" value="johndoe@example.com">
+
+		<label for="password">New Password</label>
+		<input type="password" id="password" name="password" placeholder="Enter new password">
+
+		<label for="profile-pic">Profile Picture</label>
+		<input type="file" id="profile-pic" name="profile-pic" required>
+
+		<label for="bio">Bio</label>
+		<textarea id="bio" name="bio" rows="4">I love taking pictures and sharing them with my friends!</textarea>
+
+		<button type="submit">Save Changes</button>
+	</form>
+</body>
+</html>
